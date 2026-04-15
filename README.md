@@ -4,9 +4,29 @@ A real-time predictive maintenance system that implements a **physics-based Lump
 
 ---
 
-## System Architecture
+## Repository Structure
 
-![System Architecture](docs/system_architecture.png)
+```
+thermal_dt/
+├── client/
+│   ├── app.py              # Streamlit dashboard + real-time polling loop
+│   ├── thermal_model.py    # ThermalDigitalTwin class (Ghost Motor + TTF + anomaly)
+│   ├── derive.py           # Offline parameter derivation utilities
+│   └── requirements.txt    # Client-side Python dependencies
+│
+├── pi_server/
+│   ├── server.py           # FastAPI edge server (sensor reads + motor control)
+│   ├── temp_collection.py  # Standalone data logging script (for calibration runs)
+│   └── pi_requirements.txt # Raspberry Pi Python dependencies
+│
+├── plot_compare.py         # Offline model-vs-measured visualisation script
+├── run_A.csv               # Calibration run A 
+├── run_B.csv               # Calibration run B
+├── run_C.csv               # Calibration run C
+├── run_D.csv               # Calibration run D
+├── run_off.csv             # motor-off baseline run
+└── README.md               
+```
 
 | Component | Role |
 |---|---|
@@ -213,31 +233,6 @@ $$TTF = \frac{T_{max} - T_{current}}{\frac{dT}{dt}}$$
 
 ---
 
-## Repository Structure
-
-```
-thermal_dt/
-├── client/
-│   ├── app.py              # Streamlit dashboard + real-time polling loop
-│   ├── thermal_model.py    # ThermalDigitalTwin class (Ghost Motor + TTF + anomaly)
-│   ├── derive.py           # Offline parameter derivation utilities
-│   └── requirements.txt    # Client-side Python dependencies
-│
-├── pi_server/
-│   ├── server.py           # FastAPI edge server (sensor reads + motor control)
-│   ├── temp_collection.py  # Standalone data logging script (for calibration runs)
-│   └── pi_requirements.txt # Raspberry Pi Python dependencies
-│
-├── plot_compare.py         # Offline model-vs-measured visualisation script
-├── run_A.csv               # Calibration run A 
-├── run_B.csv               # Calibration run B
-├── run_C.csv               # Calibration run C
-├── run_D.csv               # Calibration run D
-├── run_off.csv             # motor-off baseline run
-└── README.md               
-```
-
----
 
 ## ISO 23247 Compliance
 
