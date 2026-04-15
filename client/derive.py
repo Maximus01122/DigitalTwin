@@ -41,5 +41,5 @@ print(json.dumps({
     "T_ss_offset": T_ss,
     "tau_seconds": tau,
     "h_effective": h,
-    "Q_waste_watts": Qin
+    "Q_in": Qin
 }, indent=2))

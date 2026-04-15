@@ -1,13 +1,11 @@
 import streamlit as st
 import requests
-import json
-import time
 import pandas as pd
 import altair as alt
 from thermal_model import ThermalDigitalTwin
 
 # Settings
-PI_URL = "http://127.0.0.1:8000"
+PI_URL = "http://raspberrypi.local:8000"
 
 MAX_SAFE_TEMP = 35.0
 
@@ -79,7 +77,7 @@ if 'dt_model' not in st.session_state:
             "T_ss_offset": 3.24,
             "tau_seconds": 671,
             "h_effective": 2.263,
-            "Q_waste_watts": 0.366
+            "Q_in": 0.366
         })
 if 'data_log' not in st.session_state:
     st.session_state.data_log = []

@@ -13,7 +13,7 @@ class ThermalDigitalTwin:
                 "T_ss_offset": 3.24,
                 "tau_seconds": 671,
                 "h_effective": 2.263,
-                "Q_waste_watts": 0.366
+                "Q_in": 0.366
             }
             
         self.h = calibration["h_effective"]
@@ -23,7 +23,7 @@ class ThermalDigitalTwin:
         self.input_power = self.base_input_power
         
         # Derive efficiency mathematically from Q_waste to ensure accurate heat tracking
-        self.efficiency = 1.0 - (calibration["Q_waste_watts"] / self.base_input_power)
+        self.efficiency = 1.0 - (calibration["Q_in"] / self.base_input_power)
         
         # History
         self.history_temps = []
