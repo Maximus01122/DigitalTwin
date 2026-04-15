@@ -229,12 +229,12 @@ thermal_dt/
 │   └── pi_requirements.txt # Raspberry Pi Python dependencies
 │
 ├── plot_compare.py         # Offline model-vs-measured visualisation script
-├── run_A.csv               # Calibration run A (motor on, propeller attached)
+├── run_A.csv               # Calibration run A 
 ├── run_B.csv               # Calibration run B
 ├── run_C.csv               # Calibration run C
-├── run_D.csv               # Calibration run D (partial run)
-├── run_off.csv             # Cool-down / motor-off baseline run
-└── README.md               # This file
+├── run_D.csv               # Calibration run D
+├── run_off.csv             # motor-off baseline run
+└── README.md               
 ```
 
 ---
